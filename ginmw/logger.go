@@ -43,7 +43,7 @@ func Logger(logger log.Logger) gin.HandlerFunc {
 			if len(c.Errors) > 0 {
 				logger.Error(c.Errors.ByType(gin.ErrorTypePrivate).String())
 			} else {
-				logger.Debugf("[%s][%s][%s %s][%d][%d][%s][%s][%dms]",
+				logger.Debugf("[%s][%s][%s %s][%d][%d][%s][%dms]",
 					clientIP, hostname, c.Request.Method, path, statusCode, dataLength, referer, latency)
 			}
 		}
